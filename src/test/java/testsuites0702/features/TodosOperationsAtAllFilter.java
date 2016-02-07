@@ -2,8 +2,6 @@ package testsuites0702.features;
 
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
-import testsuites0702.BaseTest;
-import testsuites0702.categories.All;
 import testsuites0702.categories.Buggy;
 import testsuites0702.categories.Smoke;
 
@@ -11,11 +9,10 @@ import static testsuites0702.pages.ToDoMVC.TaskType.ACTIVE;
 import static testsuites0702.pages.ToDoMVC.TaskType.COMPLETED;
 import static testsuites0702.pages.ToDoMVC.*;
 
-@Category({All.class})
+@Category(Smoke.class)
 public class TodosOperationsAtAllFilter extends BaseTest {
 
     @Test
-    @Category(Smoke.class)
     public void testEditAtAll() {
         givenAtAll(aTask("a", COMPLETED));
 
@@ -25,7 +22,7 @@ public class TodosOperationsAtAllFilter extends BaseTest {
     }
 
     @Test
-    @Category({Smoke.class, Buggy.class})
+    @Category(Buggy.class)
     public void testCancelEditAtAll() {
         givenAtAll(aTask("a", COMPLETED));
 
@@ -45,7 +42,6 @@ public class TodosOperationsAtAllFilter extends BaseTest {
     }
 
     @Test
-    @Category(Smoke.class)
     public void testCompleteAtAll() {
         givenAtAll(aTask("a", ACTIVE),
                 aTask("b", COMPLETED));
@@ -56,7 +52,6 @@ public class TodosOperationsAtAllFilter extends BaseTest {
     }
 
     @Test
-    @Category(Smoke.class)
     public void testClearCompletedAtAll() {
         givenAtAll(aTask("a", COMPLETED),
                 aTask("b", COMPLETED));

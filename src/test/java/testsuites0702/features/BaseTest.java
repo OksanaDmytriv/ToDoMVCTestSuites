@@ -1,4 +1,4 @@
-package testsuites0702;
+package testsuites0702.features;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Screenshots;

@@ -2,13 +2,11 @@ package testsuites0702.features;
 
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
-import testsuites0702.BaseTest;
-import testsuites0702.categories.All;
 import testsuites0702.categories.Smoke;
 
 import static testsuites0702.pages.ToDoMVC.*;
 
-@Category({Smoke.class, All.class})
+@Category(Smoke.class)
 public class TodosE2E extends BaseTest {
 
     @Test

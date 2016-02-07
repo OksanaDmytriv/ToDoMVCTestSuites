@@ -5,10 +5,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import testsuites0702.features.TodosE2E;
 import testsuites0702.features.TodosOperationsAtAllFilter;
-import testsuites0702.categories.All;
 
 @RunWith(Categories.class)
 @Suite.SuiteClasses({TodosE2E.class, TodosOperationsAtAllFilter.class})
-@Categories.IncludeCategory(All.class)
 public class AllSuiteTest {
 }

@@ -37,29 +37,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.18.1</version>
-                <configuration>
-                    <argLine>
-                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
-                    </argLine>
-                    <properties>
-                        <property>
-                            <name>listener</name>
-                            <value>ru.yandex.qatools.allure.junit.AllureRunListener</value>
-                        </property>
-                    </properties>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.aspectj</groupId>
-                        <artifactId>aspectjweaver</artifactId>
-                        <version>${aspectj.version}</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.19.1</version>
                 <dependencies>
                     <dependency>
@@ -67,8 +44,16 @@
                         <artifactId>surefire-junit47</artifactId>
                         <version>2.19.1</version>
                     </dependency>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjweaver</artifactId>
+                        <version>${aspectj.version}</version>
+                    </dependency>
                 </dependencies>
                 <configuration>
+                    <argLine>
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                    </argLine>
                     <test>
                         testsuites0702.${suite}
                     </test>
@@ -76,6 +61,13 @@
                         <webdriver.chrome.driver>/Applications/chromedriver</webdriver.chrome.driver>
                         <driver.browser>${driver.browser}</driver.browser>
                     </systemPropertyVariables>
+                    <groups>testsuites0802maven.categories.Smoke</groups>
+                    <properties>
+                        <property>
+                            <name>listener</name>
+                            <value>ru.yandex.qatools.allure.junit.AllureRunListener</value>
+                        </property>
+                    </properties>
                 </configuration>
             </plugin>
         </plugins>

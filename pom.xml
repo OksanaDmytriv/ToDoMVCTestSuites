@@ -12,6 +12,8 @@
         <aspectj.version>1.8.5</aspectj.version>
         <suite>*Test</suite>
         <driver.browser>firefox</driver.browser>
+        <test.includeCategories></test.includeCategories>
+        <test.excludeCategories></test.excludeCategories>
     </properties>
 
     <dependencies>
@@ -54,14 +56,12 @@
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
-                    <test>
-                        testsuites0702.${suite}
-                    </test>
                     <systemPropertyVariables>
                         <webdriver.chrome.driver>/Applications/chromedriver</webdriver.chrome.driver>
                         <driver.browser>${driver.browser}</driver.browser>
                     </systemPropertyVariables>
-                    <groups>testsuites0802maven.categories.Smoke</groups>
+                    <groups>${test.includeCategories}</groups>
+                    <excludedGroups>${test.excludeCategories}</excludedGroups>
                     <properties>
                         <property>
                             <name>listener</name>
@@ -84,4 +84,21 @@
             </plugin>
         </plugins>
     </reporting>
+
+    <profiles>
+        <profile>
+            <id>smoke</id>
+            <properties>
+                <test.includeCategories>testsuites0802maven.categories.Smoke</test.includeCategories>
+                <test.excludeCategories></test.excludeCategories>
+            </properties>
+        </profile>
+        <profile>
+            <id>buggy</id>
+            <properties>
+                <test.includeCategories></test.includeCategories>
+                <test.excludeCategories>testsuites0802maven.categories.Smoke</test.excludeCategories>
+            </properties>
+        </profile>
+    </profiles>
 </project>

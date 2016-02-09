@@ -7,7 +7,7 @@ import testsuites0802maven.categories.Smoke;
 import static testsuites0802maven.pages.ToDoMVC.*;
 
 @Category(Smoke.class)
-public class TodosE2E extends BaseTest {
+public class TodosE2ETest extends BaseTest {
 
     @Test
     public void testTasksCommonFlow() {

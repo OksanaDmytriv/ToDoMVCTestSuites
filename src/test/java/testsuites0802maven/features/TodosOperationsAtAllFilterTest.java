@@ -9,10 +9,10 @@ import static testsuites0802maven.pages.ToDoMVC.TaskType.ACTIVE;
 import static testsuites0802maven.pages.ToDoMVC.TaskType.COMPLETED;
 import static testsuites0802maven.pages.ToDoMVC.*;
 
-@Category(Smoke.class)
-public class TodosOperationsAtAllFilter extends BaseTest {
+public class TodosOperationsAtAllFilterTest extends BaseTest {
 
     @Test
+    @Category(Smoke.class)
     public void testEditAtAll() {
         givenAtAll(aTask("a", COMPLETED));
 
@@ -32,6 +32,7 @@ public class TodosOperationsAtAllFilter extends BaseTest {
     }
 
     @Test
+    @Category(Smoke.class)
     public void testEditAndClickOutsideAtAll() {
         givenAtAll("a", "b");
 
@@ -42,6 +43,7 @@ public class TodosOperationsAtAllFilter extends BaseTest {
     }
 
     @Test
+    @Category(Smoke.class)
     public void testCompleteAtAll() {
         givenAtAll(aTask("a", ACTIVE),
                 aTask("b", COMPLETED));
@@ -52,6 +54,7 @@ public class TodosOperationsAtAllFilter extends BaseTest {
     }
 
     @Test
+    @Category(Smoke.class)
     public void testClearCompletedAtAll() {
         givenAtAll(aTask("a", COMPLETED),
                 aTask("b", COMPLETED));
@@ -62,6 +65,7 @@ public class TodosOperationsAtAllFilter extends BaseTest {
     }
 
     @Test
+    @Category(Smoke.class)
     public void testActivateAllAtAll() {
         givenAtAll(aTask("a", COMPLETED));
 
@@ -71,6 +75,7 @@ public class TodosOperationsAtAllFilter extends BaseTest {
     }
 
     @Test
+    @Category(Smoke.class)
     public void testActivateTasksAtAll() {
         givenAtAll(aTask("a", COMPLETED),
                 aTask("b", COMPLETED));
